@@ -1,5 +1,11 @@
+"""
+calendar_kadai2.py
+カレンダーを表示するスクリプト
+2019.2.25 T.Katada 作成
+"""
+
 import datetime
-#カレンダーを表示するプログラム
+
 def year_check(year):
     """
     閏年かどうか？
@@ -41,7 +47,6 @@ def print_calendar(year,month):
         line += '  '
         line += ('   ' * (first_day_s - 1))
 
-    # カレンダーを表示する
     w = first_day_s
     for d in range(1, month_last_day + 1):
         if w > 0:
@@ -62,6 +67,7 @@ def print_calendar(year,month):
 
     print()
 
+#ターミナル上で年月を入力
 year = input("年:")
 year = int(year)
 month = input("月:")
