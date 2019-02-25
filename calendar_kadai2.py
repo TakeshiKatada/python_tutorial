@@ -16,7 +16,7 @@ def year_check(year):
     elif year % 4 == 0 and year % 100 != 0 :
         plus_day = 1
     else:
-        pass
+        plus_day = 0
     return plus_day
 
 def last_day_check(year,month):
@@ -39,7 +39,9 @@ def print_calendar(year,month):
     print("日 月 火 水 木 金 土")
 
     first_day = datetime.date(year,month,1)#入力された年月の初日
-    first_day_s = (first_day.isoweekday())#入力された曜日を数値で返す,月曜日は1,日曜日は7
+    first_day_s = (first_day.isoweekday()) % 7  #入力された曜日を数値で返す,月曜日は1,日曜日は7
+    #if first_day_s == 7:
+    #    first_day_s = 0
     month_last_day = last_day_check(year,month)#入力された月の最終日を返す
 
     line = ''
