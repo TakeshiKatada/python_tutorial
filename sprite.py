@@ -14,24 +14,21 @@ GREEN = (0,255,0)
 class Spclass(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = ¥
-        pygame.image.load("soldier.gif").convert()
-        colorkey = sejf.image.get_at((0,0))
+        self.image = pygame.image.load("soldier.gif").convert()
+        colorkey = self.image.get_at((0,0))
         self.image.set_colorkey(colorkey)
-        self.rect = self,image.get_rect()
+        self.rect = self.image.get_rect()
         self.rect.centerx = random.randrange(WIDTH)
         self.rect.centery = random.randrange(HEIGHT)
         self.x1 = random.randrange(-3, 3)
         self.y1 = random.randrange(-3, 3)
 
-    def update(sejf):
+    def update(self):
         self.rect.centerx += self.x1
         self.rect.centery += self.y1
-        if self.rect.centerx >= WIDTH ¥ 
-        or self.rect.centerX < 0:
+        if self.rect.centerx >= WIDTH or self.rect.centerx < 0:
             self.x1 *= -1
-        if self.rect.centery >= HEIGHT ¥ 
-        or self.rect.centery < 0:
+        if self.rect.centery >= HEIGHT or self.rect.centery < 0:
             self.y1 *= -1
 
 pygame.init()
